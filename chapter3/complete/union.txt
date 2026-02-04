@@ -1,0 +1,81 @@
+# TABLAS Y SUS RELACIONES
+
+## booking_item
+- Relacionada con `customers` mediante `customer_id`
+- Relacionada con `flights` mediante `flight_id`
+- Relacionada con `face_familie` mediante `fare_family_id`
+- Relacionada con `prices` mediante `price_id`
+
+## events
+- Relacionada con `customers` mediante `customer_id`
+
+## face_familie
+- Referenciada por `booking_item` mediante `fare_family_id`
+- Referenciada por `flight_invent` mediante `fare_family_id`
+
+## prices
+- Referenciada por `booking_item` mediante `price_id`
+- Relacionada con `inventory` mediante `inventory_id`
+
+## flight_invent
+- Relacionada con `flights` mediante `flight_id`
+- Relacionada con `face_familie` mediante `fare_family_id`
+- Referenciada por `prices` mediante `inventory_id`
+
+## flights
+- Referenciada por `booking_item` mediante `flight_id`
+- Referenciada por `tickets` mediante `flight_id`
+- Referenciada por `flight_invent` mediante `flight_id`
+- Relacionada con `routes` mediante `origin` y `destination`
+
+## payments
+- Relacionada con `customers` mediante `customer_id` (aparece dos veces)
+
+## customers
+- Referenciada por `booking_item`, `events`, `payments`, `tickets`, `bookings` mediante `customer_id`
+
+## routes
+- Relacionada con `flights` mediante `origin` y `destination`
+- Relacionada con `airport` mediante `airport_code`
+
+## airport
+- Referenciada por `routes` mediante `airport_code`
+
+## tickets
+- Relacionada con `flights` mediante `flight_id`
+- Relacionada con `customers` mediante `customer_id`
+
+## bookings
+- Relacionada con `customers` mediante `customer_id`
+- Relacionada con `hotels` mediante `hotel_id`
+
+## hotel_price
+- Relacionada con `hotels` mediante `hotel_id`
+- Relacionada con `inventory` (posiblemente) mediante `hotel_id` y `date`
+
+## hotels
+- Referenciada por `bookings` mediante `hotel_id`
+- Referenciada por `hotel_price` mediante `hotel_id`
+- Referenciada por `inventory` mediante `hotel_id`
+
+## inventory
+- Referenciada por `prices` mediante `inventory_id`
+- Relacionada con `hotels` mediante `hotel_id`
+- Relacionada con `hotel_price` (posiblemente) mediante `hotel_id` y `date`
+
+Union de flights
+1. aircraft 
+2. rutas y airport
+3. (booking_item + flights)
+4. (flights + flight_inventory + prices)
+
+Union de bookings
+1. hotels
+2. (bookings + hotel_prices)
+3. (booking_item + inventory)
+
+Union de payments
+1. (payments + customers)
+2. (payments + bookings + tickets)
+
+events only
