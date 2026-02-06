@@ -2,12 +2,13 @@
 class Booking:
     
     def revenue(status):
+    # Status: PENDING_PAYMENT, TICKETED, CANCELLED, CONFIRMED
         query = f"""
         SELECT h.hotel_id, h.name, h.city, h.country,
             COUNT(DISTINCT b.booking_id) as total_bookings,
             COUNT(DISTINCT b.customer_id) as unique_customers,
             SUM(b.total_amount) as total_revenue_eur,
-            AVG(b.total_amount) as avg_booking_value_eur,
+            AVG(b.total_amount) as avg_booking_value_eur
         FROM travel.hotels h
         LEFT JOIN travel.bookings b ON h.hotel_id = b.hotel_id
             AND b.status = '{status}'
@@ -107,41 +108,42 @@ class Booking:
     
 
     def revenue_performance(status):
+    # Status: PENDING_PAYMENT, TICKETED, CANCELLED, CONFIRMED
         query = f"""
-            WITH daily_revenue AS (
-            SELECT 
-                b.hotel_id,
-                COUNT(b.booking_id) as daily_bookings,
-                SUM(b.total_amount) as total_amount,
-                AVG(b.total_amount) as avg_amount
-            FROM travel.bookings b
-            WHERE b.status = '{status}'
-            GROUP BY b.hotel_id
-                ),
-                hotel_summary AS (
-                    SELECT 
-                        h.hotel_id,
-                        h.name,
-                        h.city,
-                        h.stars
-                    FROM travel.hotels h
-                    GROUP BY h.hotel_id, h.name, h.city, h.stars
-                ),
-                ranked_hotels AS (
-                    SELECT *,
-                        ROW_NUMBER() OVER (ORDER BY total_amount DESC) as revenue_rank,
-                        percent_rank() OVER (ORDER BY total_amount) as revenue_p
-                    FROM hotel_summary h
-                    left join daily_revenue dr ON h.hotel_id = dr.hotel_id
-                )
+        WITH daily_revenue AS (
+                SELECT 
+                    b.hotel_id,
+                    COUNT(b.booking_id) as daily_bookings,
+                    SUM(b.total_amount) as total_amount,
+                    AVG(b.total_amount) as avg_amount
+                FROM travel.bookings as b
+                WHERE b.status = '{status}'
+                GROUP BY b.hotel_id
+            ),
+            hotel_summary AS (
+                SELECT 
+                    h.hotel_id,
+                    h.name,
+                    h.city,
+                    h.stars
+                FROM travel.hotels h
+                GROUP BY h.hotel_id, h.name, h.city, h.stars
+            ),
+            ranked_hotels AS (
                 SELECT *,
-                    CASE 
-                        WHEN revenue_p >= 0.8 THEN 'TOP_20%'
-                        WHEN revenue_p >= 0.5 THEN 'MIDDLE_50%'
-                        ELSE 'BOTTOM_30%'
-                    END as revenue_segment
-                FROM ranked_hotels
-                ORDER BY revenue_rank
+                    ROW_NUMBER() OVER (ORDER BY total_amount DESC) as revenue_rank,
+                    percent_rank() OVER (ORDER BY total_amount) as revenue_p
+                FROM hotel_summary h
+                left join daily_revenue dr ON h.hotel_id = dr.hotel_id
+            )
+            SELECT *,
+                CASE 
+                    WHEN revenue_p >= 0.8 THEN 'TOP_20%'
+                    WHEN revenue_p >= 0.5 THEN 'MIDDLE_50%'
+                    ELSE 'BOTTOM_30%'
+                END as revenue_segment
+            FROM ranked_hotels
+            ORDER BY revenue_rank
         """
 
         return query
@@ -421,8 +423,8 @@ class Customers:
 class Events:
     def events():
         query = f"""
-        select event_name, count(e.customer_id ), count(e.customer_id2), e.city,
-        avg(e.price_event) , sum(e.price_event)
+        select event_name, count(e.customer_id ) as customer_count, count(e.customer_id2) as customer_count2, e.city,
+        avg(e.price_event) as avg_price, sum(e.price_event) as total_price
         from traveltech.travel.events e
         group by e.event_name, city;
         """     
