@@ -1,0 +1,36 @@
+"""
+WanderData API - Travel Intelligence Platform
+==============================================
+
+A high-performance REST API providing comprehensive travel analytics, flights and booking intelligence.
+
+🔍 **Analytics**
+Advanced travel metrics including route popularity, demand, revenue optimization,
+and market trends analysis with window functions and CTEs.
+
+🏨 **Hotels**
+Complete hotel management with dynamic pricing, inventory tracking, occupancy analytics, 
+and competitor price benchmarking.
+
+✈️ **Flights**
+Flights route performance metrics, 
+aircraft utilization tracking, and price elasticity modeling.
+
+👥 **Customers**
+Customer insights engine featuring CLV calculation, RFM segmentation, behavioral patterns.
+
+💳 **Payments**
+Payment processing analytics with success rate monitoring, fraud detection, 
+transaction reconciliation, and multi-method support.
+
+📅 **Events**
+Event-driven architecture capturing user interactions, system events, and reactive workflows.
+
+🚀 **Performance**
+Built with FastAPI, async SQLAlchemy, and PostgreSQL. Features connection pooling, 
+caching strategies, and optimized query execution.
+
+🔒 **Security**
+JWT authentication, role-based access control and protected schemas, SQL injection prevention, 
+and comprehensive request validation using Pydantic schemas.
+"""
