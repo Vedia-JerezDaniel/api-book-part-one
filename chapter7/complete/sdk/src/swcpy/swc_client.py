@@ -113,6 +113,7 @@ class SWCClient:
         endpoint_url = self.HEALTH_CHECK_ENDPOINT
         return self.call_api(endpoint_url)
 
+
     def list_leagues(
         self,
         skip: int = 0, 
