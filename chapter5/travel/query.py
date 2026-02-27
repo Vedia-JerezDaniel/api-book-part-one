@@ -3,7 +3,7 @@ class Booking:
     
     def revenue(status):
     # Status: PENDING_PAYMENT, TICKETED, CANCELLED, CONFIRMED
-        query = """
+        query = f"""
         SELECT h.hotel_id, h.name, h.city, h.country,
             COUNT(DISTINCT b.booking_id) as total_bookings,
             COUNT(DISTINCT b.customer_id) as unique_customers,
@@ -11,7 +11,7 @@ class Booking:
             ROUND(AVG(b.total_amount), 2) as average_revenue
         FROM travel.hotels h
         LEFT JOIN travel.bookings b ON h.hotel_id = b.hotel_id
-            AND b.status = %(status)s
+            AND b.status = '{status}'
             and b.booking_type = 'HOTEL'
         GROUP BY h.hotel_id, h.name, h.city, h.country
         ORDER BY total_revenue DESC
@@ -108,33 +108,32 @@ class Booking:
 
     def revenue_performance(status):
     # Status: PENDING_PAYMENT, TICKETED, CANCELLED, CONFIRMED
-        query = """
-        WITH daily_revenue AS (
+        query = f"""
+           WITH daily_revenue AS (
             SELECT 
-                b.hotel_id,
+                b.hotel_id as hotel_id,
                 COUNT(b.booking_id) as daily_bookings,
                 SUM(b.total_amount) as total_amount,
-                AVG(b.total_amount) as average_amount
+                AVG(b.total_amount) as avg_amount
             FROM travel.bookings as b
-            WHERE b.status = %(status)s
+            WHERE b.status = '{status}'
             GROUP BY b.hotel_id
-            ),
-            hotel_summary AS (
-                SELECT 
-                    h.hotel_id,
-                    h.name,
-                    h.city,
-                    h.stars
-                FROM travel.hotels h
-                GROUP BY h.hotel_id, h.name, h.city, h.stars
-            ),
-            ranked_hotels AS (
-                SELECT *,
-                    ROW_NUMBER() OVER (ORDER BY total_amount DESC) as revenue_rank,
-                    percent_rank() OVER (ORDER BY total_amount) as revenue_percentage
-                FROM hotel_summary h
-                left join daily_revenue dr ON h.hotel_id = dr.hotel_id
-            )
+        ),
+        hotel_summary AS (
+            SELECT 
+                h.hotel_id as hotel,
+                h.name,
+                h.city,
+                h.stars
+            FROM travel.hotels h
+        ),
+        ranked_hotels AS (
+            SELECT *,
+                ROW_NUMBER() OVER (ORDER BY total_amount DESC) as revenue_rank,
+                percent_rank() OVER (ORDER BY total_amount) as revenue_percentage
+            FROM hotel_summary h
+            left join daily_revenue dr ON h.hotel = dr.hotel_id
+        )
         SELECT *,
             CASE 
                 WHEN revenue_percentage >= 0.8 THEN 'TOP_20%'
@@ -142,8 +141,8 @@ class Booking:
                 ELSE 'BOTTOM_30%'
             END as revenue_segment
         FROM ranked_hotels
-        ORDER BY revenue_rank
-        """
+        ORDER BY revenue_rank;
+    """
 
         return query
 
@@ -350,14 +349,14 @@ class Payments:
     def payments_overview():
         query = """
         SELECT 
-            DATE_PART('month', p.created_at) as payment_month,
+            DATE_PART('month', p.created_at) as payment_month_num,
             CASE 
                 WHEN DATE_PART('month', p.created_at) = 1 THEN 'JANUARY'
                 WHEN DATE_PART('month', p.created_at) = 2 THEN 'FEBRUARY'
             END as payment_month,
             p.method, p.customer_id, b.booking_type,
-            COUNT(DISTINCT p.payment_id) as total_payments,
-            COUNT(DISTINCT b.booking_id) as total_bookings,
+            COUNT(DISTINCT p.payment_id) as count_payments,
+            COUNT(DISTINCT b.booking_id) as count_bookings,
             SUM(p.amount) as total_payments,
             SUM(b.total_amount) as total_bookings,
             AVG(DATE_PART('day', p.created_at - b.created_at)) as avg_days_to_pay,
@@ -417,7 +416,7 @@ class Customers:
         JOIN travel.booking_items b ON f.flight_id = b.flight_id
         JOIN travel.prices p ON p.price_id = b.price_id 
         GROUP BY  f.destination, b.customer_id, b.cabin_class 
-        order by count desc
+        order by destination_trips
         """
         
         return query

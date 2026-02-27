@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wanderdata-api"
-version = "0.1.0"
+version = "0.2.0"
 description = "Travel intelligence platform transforming raw travel data into actionable insights"
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
@@ -47,6 +47,7 @@ dependencies = [
     "pandas>=2.2.0",
     "numpy>=1.26.0",
     "pyarrow>=16.0.0",
+    "fastparquet>=2025.12.0",
     
     # Validation & Serialization
     "pydantic>=2.10.0",

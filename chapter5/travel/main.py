@@ -7,11 +7,11 @@ from fastapi import Depends, FastAPI, HTTPException, Query
 import crud, schemas
 # from connect import SessionLocal
 
-with open('chapter5/travel/requirements.txt', 'r', encoding='utf-8') as file:
+with open('/home/dani/API/api-book-part-one/chapter5/travel/requirements.txt', 'r', encoding='utf-8') as file:
     content = file.read()
     print(content)
 
-content = open('chapter5/travel/description.txt').read()
+content = open('/home/dani/API/api-book-part-one/chapter5/travel/requirements.txt').read()
 
 
 app = FastAPI(description=content,

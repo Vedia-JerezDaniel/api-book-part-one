@@ -1,0 +1,111 @@
+name,city,country,customer_id,booking_type,total_bookings,total_revenue
+Burj Al Arab Jumeirah,Dubai,UAE,020addac,HOTEL,1,2738.0
+Burj Al Arab Jumeirah,Dubai,UAE,c52c461f,HOTEL,1,2658.0
+Burj Al Arab Jumeirah,Dubai,UAE,7aca74a5,HOTEL,1,2580.0
+The Plaza,New York,USA,636a90e5,HOTEL,2,2573.0
+Burj Al Arab Jumeirah,Dubai,UAE,94ba147e,HOTEL,1,2299.0
+Burj Al Arab Jumeirah,Dubai,UAE,cca84bac,AIR,1,2042.0
+Burj Al Arab Jumeirah,Dubai,UAE,b6912e98,HOTEL,1,1936.0
+The Plaza,New York,USA,480d4540,HOTEL,1,1886.0
+Burj Al Arab Jumeirah,Dubai,UAE,e4c1f1b9,AIR,1,1859.0
+The Plaza,New York,USA,763b5033,AIR,1,1852.0
+The Plaza,New York,USA,7d2899a3,AIR,1,1844.0
+The Plaza,New York,USA,325086de,AIR,1,1716.0
+The Plaza,New York,USA,abda005a,AIR,1,1705.0
+Burj Al Arab Jumeirah,Dubai,UAE,922bca79,HOTEL,1,1694.0
+The Plaza,New York,USA,b83d9ca7,AIR,1,1677.0
+Burj Al Arab Jumeirah,Dubai,UAE,dfe87ee6,AIR,1,1617.0
+The Plaza,New York,USA,7aca74a5,HOTEL,1,1594.0
+The Plaza,New York,USA,a187c1d1,AIR,1,1585.0
+Burj Al Arab Jumeirah,Dubai,UAE,20a706d1,HOTEL,1,1559.0
+The Plaza,New York,USA,001d93f0,AIR,1,1510.0
+The Plaza,New York,USA,2ab6f6bc,AIR,1,1484.0
+The Savoy,London,United Kingdom,0e903fb3,HOTEL,2,1463.0
+The Plaza,New York,USA,baebc1a2,HOTEL,1,1436.0
+Le Meurice,Paris,France,147b4c93,HOTEL,1,1401.0
+Le Meurice,Paris,France,9fb284cb,AIR,1,1387.0
+The Plaza,New York,USA,ff5c0ad3,AIR,1,1357.0
+Le Meurice,Paris,France,f215ee7a,HOTEL,1,1327.0
+The Plaza,New York,USA,3c6e644e,AIR,1,1324.0
+Le Meurice,Paris,France,02961c5a,AIR,1,1288.0
+The Plaza,New York,USA,70a4f1ed,AIR,1,1278.0
+Le Meurice,Paris,France,1e5c3e96,HOTEL,1,1233.0
+Le Meurice,Paris,France,60da3a78,AIR,1,1225.0
+The Plaza,New York,USA,ab8ee69a,AIR,1,1197.0
+Le Meurice,Paris,France,0c9ea52e,HOTEL,1,1192.0
+The Savoy,London,United Kingdom,371f8a70,AIR,1,1190.0
+Le Meurice,Paris,France,fc6fa769,HOTEL,1,1155.0
+Le Meurice,Paris,France,077545c0,AIR,1,1122.0
+Le Meurice,Paris,France,8fd62e85,AIR,1,1105.0
+The Savoy,London,United Kingdom,1a8afe2d,AIR,1,1101.0
+The Plaza,New York,USA,a8e00fa8,HOTEL,1,1094.0
+The Plaza,New York,USA,6b67a717,AIR,1,1041.0
+Le Meurice,Paris,France,b48a4586,HOTEL,1,1027.0
+The Savoy,London,United Kingdom,952001fe,HOTEL,1,1021.0
+Le Meurice,Paris,France,1c1f026d,AIR,1,949.0
+Le Meurice,Paris,France,e10e2423,HOTEL,1,946.0
+The Savoy,London,United Kingdom,1a8afe2d,HOTEL,1,916.0
+The Plaza,New York,USA,2fee01ed,HOTEL,1,894.0
+Le Meurice,Paris,France,9a089867,HOTEL,1,888.0
+Hotel Cap Rocat,Palma,Spain,975a8d58,AIR,1,864.0
+Hotel Cap Rocat,Palma,Spain,df01be6f,AIR,1,845.0
+The Plaza,New York,USA,869aa9e5,HOTEL,1,842.0
+The Savoy,London,United Kingdom,e3a6f945,AIR,1,836.0
+Hotel Cap Rocat,Palma,Spain,c8828009,AIR,1,819.0
+Hotel Cap Rocat,Palma,Spain,02b5a103,HOTEL,1,813.0
+The Savoy,London,United Kingdom,480d4540,HOTEL,1,793.0
+Hotel Cap Rocat,Palma,Spain,b6912e98,AIR,1,766.0
+Le Meurice,Paris,France,57905a5c,AIR,1,761.0
+Le Meurice,Paris,France,be170500,HOTEL,1,752.0
+The Savoy,London,United Kingdom,baebc1a2,AIR,1,751.0
+Hotel Cap Rocat,Palma,Spain,9360edf2,HOTEL,1,721.0
+Hotel Cap Rocat,Palma,Spain,5b807a60,HOTEL,1,701.0
+Hotel Cap Rocat,Palma,Spain,639ab155,AIR,1,701.0
+Hotel Cap Rocat,Palma,Spain,dfe87ee6,AIR,1,681.0
+Le Meurice,Paris,France,6b67a717,AIR,1,651.0
+The Savoy,London,United Kingdom,2fee01ed,HOTEL,1,645.0
+The Savoy,London,United Kingdom,767dbf58,HOTEL,1,596.0
+The Savoy,London,United Kingdom,89e2635c,AIR,1,585.0
+The Savoy,London,United Kingdom,3b972b7f,AIR,1,585.0
+The Savoy,London,United Kingdom,6e8afdb9,HOTEL,1,532.0
+Hotel Cap Rocat,Palma,Spain,bd63282d,HOTEL,1,500.0
+Hotel Cap Rocat,Palma,Spain,e9e45e35,AIR,1,475.0
+Hotel Mar,Barcelona,Spain,70fe874b,AIR,1,279.0
+Hotel Mar,Barcelona,Spain,cca84bac,HOTEL,1,278.0
+Hotel Mar,Barcelona,Spain,aebe7fef,HOTEL,1,260.0
+Hotel Mar,Barcelona,Spain,b8c53350,AIR,1,252.0
+Hotel Mar,Barcelona,Spain,8b4b7180,AIR,1,250.0
+Hotel Centro,Madrid,Spain,ab8ee69a,HOTEL,1,240.0
+Hotel Centro,Madrid,Spain,707f7374,AIR,1,239.0
+Hotel Mar,Barcelona,Spain,de8c2926,HOTEL,1,235.0
+Hotel Mar,Barcelona,Spain,0235d7e9,HOTEL,1,235.0
+Hotel Mar,Barcelona,Spain,b0595b9e,HOTEL,1,217.0
+Hotel Mar,Barcelona,Spain,e9bec207,HOTEL,1,205.0
+Hotel Centro,Madrid,Spain,13e9a3ab,AIR,1,202.0
+Hotel Centro,Madrid,Spain,56950a23,HOTEL,1,193.0
+Hotel Centro,Madrid,Spain,4c9c0c62,AIR,1,182.0
+Hotel Centro,Madrid,Spain,02961c5a,HOTEL,1,178.0
+Hotel Mar,Barcelona,Spain,02960cb6,HOTEL,1,171.0
+Hotel Centro,Madrid,Spain,13e2c732,AIR,1,167.0
+Hotel Centro,Madrid,Spain,89e2635c,HOTEL,1,165.0
+Hotel Centro,Madrid,Spain,e9bec207,HOTEL,1,153.0
+Hotel Centro,Madrid,Spain,74ecdd17,AIR,1,148.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,e9bec207,HOTEL,1,147.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,60da3a78,AIR,1,146.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,11339f9b,AIR,1,143.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,0e903fb3,HOTEL,1,143.0
+Hotel Mar,Barcelona,Spain,94cc4991,AIR,1,141.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,001d93f0,HOTEL,1,141.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,147b4c93,AIR,1,133.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,0da5fb99,HOTEL,1,131.0
+Hotel Centro,Madrid,Spain,1e44fee8,AIR,1,128.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,422d896c,HOTEL,1,125.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,dc161f95,HOTEL,1,115.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,5ce4eb4c,AIR,1,114.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,9fb284cb,HOTEL,1,105.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,1fa35020,HOTEL,1,101.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,2ab6f6bc,AIR,1,99.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,875d2dbe,AIR,1,96.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,f08f881b,AIR,1,83.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,102a243d,HOTEL,1,83.0
+Los Tajibos Hotel,Santa Cruz,Bolivia,2fee01ed,AIR,1,71.0

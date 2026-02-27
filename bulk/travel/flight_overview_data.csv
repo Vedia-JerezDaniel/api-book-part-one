@@ -1,0 +1,57 @@
+origin,destination,model,manufacturer,seats_total
+MAD,LHR,A330-300,Airbus,300
+MAD,BCN,777-300ER,Boeing,396
+MAD,DXB,787-9 Dreamliner,Boeing,296
+MAD,SCZ,787-9 Dreamliner,Boeing,296
+MAD,CDG,787-9 Dreamliner,Boeing,296
+MAD,JFK,787-9 Dreamliner,Boeing,296
+MAD,PMI,A330-300,Airbus,300
+MAD,SCZ,A330-300,Airbus,300
+MAD,JFK,787-9 Dreamliner,Boeing,296
+MAD,DXB,787-9 Dreamliner,Boeing,296
+MAD,CDG,A350-900,Airbus,325
+MAD,LHR,787-9 Dreamliner,Boeing,296
+MAD,PMI,777-300ER,Boeing,396
+MAD,BCN,787-9 Dreamliner,Boeing,296
+MAD,PMI,A330-300,Airbus,300
+MAD,DXB,A350-900,Airbus,325
+MAD,JFK,A330-300,Airbus,300
+MAD,CDG,A350-900,Airbus,325
+MAD,LHR,787-9 Dreamliner,Boeing,296
+MAD,SCZ,787-9 Dreamliner,Boeing,296
+MAD,BCN,777-300ER,Boeing,396
+MAD,PMI,A330-300,Airbus,300
+MAD,CDG,A330-300,Airbus,300
+MAD,BCN,A330-300,Airbus,300
+MAD,SCZ,A350-900,Airbus,325
+MAD,JFK,777-300ER,Boeing,396
+MAD,DXB,777-300ER,Boeing,396
+BCN,LHR,787-9 Dreamliner,Boeing,296
+MAD,DXB,A330-300,Airbus,300
+MAD,SCZ,777-300ER,Boeing,396
+BCN,LHR,787-9 Dreamliner,Boeing,296
+MAD,CDG,777-300ER,Boeing,396
+MAD,BCN,A350-900,Airbus,325
+MAD,PMI,A350-900,Airbus,325
+MAD,JFK,777-300ER,Boeing,396
+MAD,BCN,787-9 Dreamliner,Boeing,296
+MAD,PMI,A330-300,Airbus,300
+MAD,JFK,777-300ER,Boeing,396
+MAD,DXB,787-9 Dreamliner,Boeing,296
+MAD,LHR,A350-900,Airbus,325
+MAD,CDG,777-300ER,Boeing,396
+MAD,SCZ,787-9 Dreamliner,Boeing,296
+MAD,LHR,777-300ER,Boeing,396
+MAD,CDG,A350-900,Airbus,325
+MAD,DXB,A330-300,Airbus,300
+MAD,JFK,777-300ER,Boeing,396
+MAD,SCZ,A330-300,Airbus,300
+MAD,PMI,787-9 Dreamliner,Boeing,296
+MAD,BCN,787-9 Dreamliner,Boeing,296
+MAD,PMI,A350-900,Airbus,325
+MAD,BCN,787-9 Dreamliner,Boeing,296
+MAD,CDG,787-9 Dreamliner,Boeing,296
+MAD,SCZ,A350-900,Airbus,325
+MAD,LHR,787-9 Dreamliner,Boeing,296
+MAD,DXB,787-9 Dreamliner,Boeing,296
+MAD,JFK,A350-900,Airbus,325
