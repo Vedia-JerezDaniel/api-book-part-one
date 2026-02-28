@@ -1,0 +1,9 @@
+hotel_id,name,city,country,total_bookings,unique_customers,total_revenue,average_revenue
+fc55b3c4,Burj Al Arab Jumeirah,Dubai,UAE,7,7,15464.0,2209.14
+a6065b00,The Plaza,New York,USA,8,7,10319.0,1289.88
+1ad4f8c1,Le Meurice,Paris,France,9,9,9921.0,1102.33
+e5d181db,The Savoy,London,United Kingdom,8,7,5966.0,745.75
+86a8b017,Hotel Cap Rocat,Palma,Spain,4,4,2735.0,683.75
+4c9692b3,Hotel Mar,Barcelona,Spain,7,7,1601.0,228.71
+8d1f74d7,Los Tajibos Hotel,Santa Cruz,Bolivia,9,9,1091.0,121.22
+3aaf0cc6,Hotel Centro,Madrid,Spain,5,5,929.0,185.8
