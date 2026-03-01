@@ -57,8 +57,9 @@ class Revenue_performance(BaseModel):
     daily_bookings: int
     total_amount: int
     average_amount: float
+    revenue_rank: int
+    revenue_percentage: float
     revenue_segment: str
-
 
 class Optimized_revenue(BaseModel):
     model_config = ConfigDict(from_attributes = True)
