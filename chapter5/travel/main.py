@@ -182,7 +182,7 @@ def read_flight_inventory():
 def read_customer_payments():
     query = crud.qp_c
     df = crud.execute_query_to_dataframe(query)
-    
+    df = df.fillna('N/A')
     records = df.to_dict(orient='records')
     return [schemas.Customer_payments(**row) for row in records]
 
@@ -225,6 +225,7 @@ def read_customer_hotel_preferences():
 def read_customer_flight_preferences():
     query = crud.qc_cf
     df = crud.execute_query_to_dataframe(query)
+    df = df.fillna('N/A')
     
     records = df.to_dict(orient='records')
     return [schemas.Customer_flight_preferences(**row) for row in records]

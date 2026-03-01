@@ -43,6 +43,7 @@ qc_fc =query.Customers.customer_class_flight()
 # EVENTS QUERIES
 qe_e = query.Events.events()
 
+
 # QUERY ANALYTICS
 qc_hco = "SELECT COUNT(*) FROM travel.hotels"
 qc_fco = "SELECT COUNT(*) FROM travel.flights"

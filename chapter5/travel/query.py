@@ -114,7 +114,7 @@ class Booking:
                 b.hotel_id as hotel_id,
                 COUNT(b.booking_id) as daily_bookings,
                 SUM(b.total_amount) as total_amount,
-                AVG(b.total_amount) as avg_amount
+                AVG(b.total_amount) as average_amount
             FROM travel.bookings as b
             WHERE b.status = '{status}'
             GROUP BY b.hotel_id
@@ -312,7 +312,7 @@ class Payments:
         WITH customer_spending AS (
         SELECT 
             c.customer_id,
-            c.loyalty_id ,
+            c.loyalty_id::text,
             COUNT(DISTINCT p.payment_id) as total_payments,
             SUM(p.amount) as total_spent_eur,
             AVG(p.amount) as avg_payment_eur
@@ -411,7 +411,7 @@ class Customers:
         SELECT 
             count(f.destination) as destination_trips, f.destination,
             AVG(p.total_fare) as average_price,
-            b.customer_id, b.cabin_class 
+            b.customer_id::text, b.cabin_class 
         FROM travel.flights f
         JOIN travel.booking_items b ON f.flight_id = b.flight_id
         JOIN travel.prices p ON p.price_id = b.price_id 

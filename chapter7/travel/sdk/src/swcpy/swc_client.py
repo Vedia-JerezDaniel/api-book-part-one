@@ -53,7 +53,7 @@ class SWCClient:
     """Interacts with the Sports World Central API."""
 
     HEALTH_CHECK_ENDPOINT = "/"
-    LIST_BOOKING_ITEM_ENDPOINT = "/v0/booking_items/"
+    LIST_BOOKING_ITEM_ENDPOINT = "/v0/booking_item/"
     LIST_BOOKING_REVENUE_STATUS_ENDPOINT = "/v0/booking_revenue_status/"
     LIST_BOOKING_OCCUPANCY_RATE_ENDPOINT = "/v0/booking_occupancy_rate/"
     LIST_REVENUE_PERFORMANCE_ENDPOINT = "/v0/revenue_performance/"

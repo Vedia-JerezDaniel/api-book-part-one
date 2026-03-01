@@ -10,18 +10,12 @@ from pydantic import BaseModel, ConfigDict, Field
 
 # %%
 
-class Hotel(BaseModel):
+class Booking_Item(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    hotel_id : str
+    hotel_id: str
     name : str
     city : str
     country : str
-    stars : int
-
-class Booking_Item(BaseModel):
-    model_config = ConfigDict(from_attributes = True)
-
-    hotel: List[Hotel] = Field(default_factory=list)
     total_bookings : float
     unique_customers : float
     total_revenue : float
@@ -29,35 +23,37 @@ class Booking_Item(BaseModel):
 
 # %%
 class Booking_revenue_status(BaseModel):
-    model_config = ConfigDict(from_attributes = True, arbitrary_types_allowed=True)
-    hotel : List[Hotel] = Field(default_factory=list)
+    model_config = ConfigDict(from_attributes = True)
+    name : str
+    city: str
     status : str
     total_amount : float
     bookings_count : int
-    price_strategy : str
+    pricing_strategy : str
 
 class Hotel_prices(BaseModel):
     model_config = ConfigDict(from_attributes = True)
     price_per_night : float
 
 # %%
-class Inventory(BaseModel):
+class Occupancy_rate(BaseModel):
     model_config = ConfigDict(from_attributes = True)
+    hotel_id: str
+    name : str
+    city : str
     date : date
     allotment_total : int
     allotment_sold : int
     occupancy_rate : float
-
-class Occupancy_rate(BaseModel):
-    model_config = ConfigDict(from_attributes = True)
-    hotel : List[Hotel] = Field(default_factory=list)
-    inventory: List[Inventory] = Field(default_factory=list)
-    price_per_night: List[Hotel_prices] = Field(default_factory=list)
+    price_per_night: float
 
 # %%
 class Revenue_performance(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    hotel: List[Hotel] = Field(default_factory=list)
+    hotel_id: str
+    name : str
+    city : str
+    stars: int
     daily_bookings: int
     total_amount: int
     average_amount: float
@@ -66,10 +62,12 @@ class Revenue_performance(BaseModel):
 
 class Optimized_revenue(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    hotel: List[Hotel] = Field(default_factory=list)
-    inventory: List[Inventory] = Field(default_factory=list)
+    name: str
+    date : date
+    allotment_total : int
+    allotment_sold : int
     available: int
-    price_per_night: List[Hotel_prices] = Field(default_factory=list)
+    price_per_night: float
     recommendation: str
     suggested_price_eur: float
 
@@ -81,21 +79,18 @@ class Flight(BaseModel):
     origin : str
     destination : str
 
-class Aircraft(BaseModel):
+class Flight_overview(BaseModel):
     model_config = ConfigDict(from_attributes = True)
+    origin : str
+    destination : str
     model : str
     manufacturer : str
     seats_total : int
-
-class Flight_overview(BaseModel):
-    model_config = ConfigDict(from_attributes = True)
-    flights : List[Flight] = Field(default_factory=list)
-    aircraft : List[Aircraft] = Field(default_factory=list)
-
 # %%
 class Flight_prices(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    flights: List[Flight] = Field(default_factory=list)
+    origin : str
+    destination : str
     min_price : float
     max_price : float
     median_price : float
@@ -103,7 +98,8 @@ class Flight_prices(BaseModel):
 
 class Flight_popularity(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    flights: List[Flight] = Field(default_factory=list)
+    origin : str
+    destination : str
     cabin_class : str
     average_customer_spend : float  
     popularity_rank : int
@@ -120,24 +116,20 @@ class Flight_inventory(BaseModel):
 # PAYMENTS
 
 # %%
-class Customer(BaseModel):
-    model_config = ConfigDict(from_attributes = True)
-    customer_id : int
-    loyalty_id : str
-
 class Customer_payments(BaseModel):
     model_config = ConfigDict(from_attributes = True)
     value_segment : str
-    customer: List[Customer] = Field(default_factory=list)
+    customer_id : str
+    loyalty_id : str
     average_spent : float
     segment_revenue : float
 
 # %%
 class Payments_overview(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    payment_month : int
+    payment_month : str
     method : str
-    customer: List[Customer] = Field(default_factory=list)
+    customer_id : str
     booking_type : str
     total_bookings : int
     total_payments : float
@@ -149,8 +141,10 @@ class Payments_overview(BaseModel):
 # %%
 class Customer_hotel_preferences(BaseModel):
     model_config = ConfigDict(from_attributes = True)
-    hotel : List[Hotel] = Field(default_factory=list)
-    customer_id : int
+    name : str
+    city : str
+    country : str
+    customer_id : str
     booking_type : str
     total_bookings : int
     total_revenue : int
@@ -161,14 +155,15 @@ class Customer_flight_preferences(BaseModel):
     total_flights : int
     max_price : float
     median_price : float
-    customer: List[Customer] = Field(default_factory=list)
+    customer_id : str
+    loyalty_id : str
     
 class Customer_flight_class(BaseModel):
     model_config = ConfigDict(from_attributes = True)
     destination_trips : int
     destination : str
     average_price : float
-    customer: List[Customer] = Field(default_factory=list)
+    customer_id : str
     cabin_class : str
 
 # %%
